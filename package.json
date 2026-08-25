@@ -1,5 +1,5 @@
 {
-  "name": "shaky-satellite",
+  "name": "District Wall Map",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -9,13 +9,29 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
-    "astro": "^7.2.4"
+    "@astrojs/react": "^6.0.4",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "astro": "^7.2.4",
+    "react": "19.0.0-rc.1",
+    "react-dom": "19.0.0-rc.1",
+    "react-leaflet": "5.0.0-rc.2",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@types/leaflet": "^1.9.22",
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^7.0.2"
+  },
+  "peerDependencies": {
+    "typescript": "^7.0.2"
   }
 }
