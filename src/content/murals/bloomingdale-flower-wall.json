@@ -1,0 +1,32 @@
+{
+  "title": "Flower Wall",
+  "artists": [
+    { "name": "Jordan Reyes", "url": "https://instagram.com/jordanreyesart" }
+  ],
+  "description": "A vibrant floral mural covering the side of a rowhouse near North Capitol, added during a neighborhood beautification project.",
+  "location": {
+    "lat": 38.9186,
+    "lng": -77.0086,
+    "address": "1st & R St NW",
+    "neighborhood": "Bloomingdale"
+  },
+  "status": "existing",
+  "dateStart": { "year": 2018, "month": 5, "precision": "exact" },
+  "lastUpdated": "2026-08-20",
+  "photos": [
+    {
+      "key": "fixtures/bloomingdale-flower-wall-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "Full wall, daytime",
+      "dateTaken": "2024-04-12",
+      "credit": "Jordan Reyes"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Artist portfolio",
+      "url": "https://jordanreyesart.example.com/flower-wall"
+    }
+  ]
+}

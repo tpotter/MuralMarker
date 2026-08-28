@@ -1,0 +1,31 @@
+{
+  "title": "Riverwalk Currents",
+  "artists": [{ "name": "Devon Marsh" }],
+  "description": "An abstract wave-pattern mural along the Anacostia Riverwalk Trail underpass, last confirmed present in a 2015 photo and found gone during a 2019 site visit — the true removal date is undocumented.",
+  "location": {
+    "lat": 38.8663,
+    "lng": -76.9791,
+    "address": "Anacostia Riverwalk Trail underpass, near Good Hope Rd SE",
+    "neighborhood": "Anacostia"
+  },
+  "status": "removed",
+  "dateStart": { "year": 2013, "precision": "circa" },
+  "dateEnd": { "year": 2019, "month": 7, "precision": "circa" },
+  "removalDateUncertain": true,
+  "lastUpdated": "2026-08-10",
+  "photos": [
+    {
+      "key": "fixtures/anacostia-riverwalk-mural-01.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "Underpass mural, 2015",
+      "dateTaken": "2015-09-01"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Trail conditions photo archive",
+      "url": "https://example.com/riverwalk-trail-archive"
+    }
+  ]
+}

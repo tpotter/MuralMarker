@@ -1,0 +1,28 @@
+{
+  "artists": [{ "name": "Unknown artist" }],
+  "description": "A jazz-themed portrait mural that once covered an alley-facing wall behind a U Street club; painted over during a building renovation.",
+  "location": {
+    "lat": 38.9171,
+    "lng": -77.0286,
+    "address": "U St NW alley, near 9th St",
+    "neighborhood": "U Street"
+  },
+  "status": "removed",
+  "dateStart": { "year": 2011, "precision": "circa" },
+  "dateEnd": { "year": 2020, "month": 3, "precision": "exact" },
+  "lastUpdated": "2026-08-15",
+  "photos": [
+    {
+      "key": "fixtures/u-street-jazz-piece-01.webp",
+      "width": 1400,
+      "height": 1867,
+      "caption": "Mural before the building's 2020 renovation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Neighborhood history blog post",
+      "url": "https://example.com/u-street-jazz-mural-history"
+    }
+  ]
+}

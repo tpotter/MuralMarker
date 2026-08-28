@@ -1,6 +1,13 @@
 ---
 import "../styles/global.css";
+import { Font } from "astro:assets";
+import Title from "../components/Title.astro";
 import { Map } from "../components/Map";
+import { getCollection } from "astro:content";
+import type { Mural } from "../content.config";
+
+const entries = await getCollection("murals"); // Array<{ id, data }>
+const murals = entries.map((e) => ({ id: e.id, ...e.data }));
 ---
 
 <html lang="en">
@@ -10,9 +17,11 @@ import { Map } from "../components/Map";
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>District Wall Map</title>
+    <Font cssVariable="--font-alata" />
   </head>
-  <body>
-    <Map client:only />
+  <body class="relative">
+    <Title />
+    <Map client:only murals={murals} />
   </body>
 </html>

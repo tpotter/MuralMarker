@@ -1,0 +1,23 @@
+{
+  "title": "Alley Blooms",
+  "artists": [
+    { "name": "Priya Chandran", "url": "https://priyachandran.example.com" }
+  ],
+  "description": "A newly documented mural in an Adams Morgan alley; research on the piece is complete but no usable photograph has been taken yet.",
+  "location": {
+    "lat": 38.9218,
+    "lng": -77.0419,
+    "address": "Alley off 18th St NW, between Columbia Rd and Kalorama Rd",
+    "neighborhood": "Adams Morgan"
+  },
+  "status": "existing",
+  "dateStart": { "year": 2022, "month": 9, "precision": "exact" },
+  "lastUpdated": "2026-08-25",
+  "photos": [],
+  "sources": [
+    {
+      "label": "Community listserv post",
+      "url": "https://example.com/adams-morgan-listserv-post"
+    }
+  ]
+}
