@@ -7,15 +7,18 @@ import {
   ZoomControl,
 } from "react-leaflet";
 import type { Mural } from "../content.config";
-
-type MuralEntry = { id: string } & Mural;
+import { useFilters } from "../lib/useFilters";
+import type { MuralEntry } from "../lib/types";
+import { FilterProvider } from "./FilterProvider";
 
 interface MapProps {
   murals: MuralEntry[];
 }
 
-export const Map = ({ murals }: MapProps) => {
-  const markers = murals.map((mural) => {
+const MapInternal = ({ murals }: MapProps) => {
+  const visibleMurals = useFilters(murals);
+
+  const markers = visibleMurals.map((mural) => {
     return (
       <Marker position={[mural.location.lat, mural.location.lng]}>
         <Popup>{mural.title || "Untitled"}</Popup>
@@ -49,3 +52,9 @@ export const Map = ({ murals }: MapProps) => {
     </div>
   );
 };
+
+export const Map = ({ murals }: MapProps) => (
+  <FilterProvider>
+    <MapInternal murals={murals} />
+  </FilterProvider>
+);
