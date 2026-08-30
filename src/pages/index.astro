@@ -4,7 +4,6 @@ import { Font } from "astro:assets";
 import Title from "../components/Title.astro";
 import { Map } from "../components/Map";
 import { getCollection } from "astro:content";
-import type { Mural } from "../content.config";
 
 const entries = await getCollection("murals"); // Array<{ id, data }>
 const murals = entries.map((e) => ({ id: e.id, ...e.data }));
