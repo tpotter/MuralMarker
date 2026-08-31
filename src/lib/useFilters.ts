@@ -8,7 +8,7 @@ export const useFilters = (murals: MuralEntry[]) => {
   const { timelineFilter } = useContext(FilterContext);
 
   const filteredMurals = murals.filter((mural) => {
-    const selectedDate = new Date(timelineFilter[1], timelineFilter[0]);
+    const selectedDate = new Date(timelineFilter.year, timelineFilter.month);
     const muralStartMonth = mural.dateStart.month || 1;
     const muralStart = new Date(mural.dateStart.year, muralStartMonth - 1);
 

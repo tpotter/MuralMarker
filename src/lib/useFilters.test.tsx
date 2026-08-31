@@ -3,11 +3,11 @@ import { renderHook } from "@testing-library/react";
 import type { ReactNode } from "react";
 import { useFilters } from "./useFilters";
 import { FilterContext } from "../components/FilterProvider";
-import type { MuralEntry } from "./types";
+import type { MuralDate, MuralEntry } from "./types";
 
 // Wraps renderHook with a FilterContext supplying an arbitrary timeline value,
 // independent of FilterProvider's own state wiring.
-const withTimeline = (timelineFilter: number[]) => {
+const withTimeline = (timelineFilter: MuralDate) => {
   const wrapper = ({ children }: { children: ReactNode }) => (
     <FilterContext.Provider
       value={{ timelineFilter, setTimelineFilter: () => {} }}
@@ -41,7 +41,7 @@ describe("useFilters", () => {
     });
     // Selected timeline: June 2025
     const { result } = renderHook(() => useFilters([mural]), {
-      wrapper: withTimeline([5, 2025]),
+      wrapper: withTimeline({ month: 5, year: 2025 }),
     });
 
     expect(result.current).toEqual([mural]);
@@ -54,7 +54,7 @@ describe("useFilters", () => {
     });
     // Selected timeline: June 2025, before the mural existed
     const { result } = renderHook(() => useFilters([mural]), {
-      wrapper: withTimeline([5, 2025]),
+      wrapper: withTimeline({ month: 5, year: 2025 }),
     });
 
     expect(result.current).toEqual([]);
@@ -68,7 +68,7 @@ describe("useFilters", () => {
     });
     // Selected timeline: June 2020, between start and end
     const { result } = renderHook(() => useFilters([mural]), {
-      wrapper: withTimeline([5, 2020]),
+      wrapper: withTimeline({ month: 5, year: 2020 }),
     });
 
     expect(result.current).toEqual([mural]);
@@ -82,7 +82,7 @@ describe("useFilters", () => {
     });
     // Selected timeline: June 2025, well after the mural was removed
     const { result } = renderHook(() => useFilters([mural]), {
-      wrapper: withTimeline([5, 2025]),
+      wrapper: withTimeline({ month: 5, year: 2025 }),
     });
 
     expect(result.current).toEqual([]);
@@ -96,7 +96,7 @@ describe("useFilters", () => {
     });
     // Selected timeline: June 2015, before the mural was installed
     const { result } = renderHook(() => useFilters([mural]), {
-      wrapper: withTimeline([5, 2015]),
+      wrapper: withTimeline({ month: 5, year: 2015 }),
     });
 
     expect(result.current).toEqual([]);
@@ -130,7 +130,7 @@ describe("useFilters", () => {
           removedBeforeSelected,
           removedDuringSelected,
         ]),
-      { wrapper: withTimeline([5, 2025]) },
+      { wrapper: withTimeline({ month: 5, year: 2025 }) },
     );
 
     expect(result.current).toEqual([stillUp, removedDuringSelected]);
@@ -138,7 +138,7 @@ describe("useFilters", () => {
 
   it("returns an empty array when given no murals", () => {
     const { result } = renderHook(() => useFilters([]), {
-      wrapper: withTimeline([5, 2025]),
+      wrapper: withTimeline({ month: 5, year: 2025 }),
     });
 
     expect(result.current).toEqual([]);
