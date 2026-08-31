@@ -6,10 +6,11 @@ import {
   TileLayer,
   ZoomControl,
 } from "react-leaflet";
-import type { Mural } from "../content.config";
 import { useFilters } from "../lib/useFilters";
 import type { MuralEntry } from "../lib/types";
 import { FilterProvider } from "./FilterProvider";
+import { Timeline } from "./Timeline";
+import { useMuralRange } from "../lib/useMuralRange";
 
 interface MapProps {
   murals: MuralEntry[];
@@ -17,6 +18,7 @@ interface MapProps {
 
 const MapInternal = ({ murals }: MapProps) => {
   const visibleMurals = useFilters(murals);
+  const { totalMonths, baseMonth } = useMuralRange(murals);
 
   const markers = visibleMurals.map((mural) => {
     return (
@@ -49,6 +51,7 @@ const MapInternal = ({ murals }: MapProps) => {
         <ZoomControl position="bottomright" />
         {markers}
       </MapContainer>
+      <Timeline max={totalMonths} baseDate={baseMonth} />
     </div>
   );
 };
