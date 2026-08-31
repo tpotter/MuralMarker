@@ -11,6 +11,7 @@ import type { MuralEntry } from "../lib/types";
 import { FilterProvider } from "./FilterProvider";
 import { Timeline } from "./Timeline";
 import { useMuralRange } from "../lib/useMuralRange";
+import { MuralPopup } from "./MuralPopup";
 
 interface MapProps {
   murals: MuralEntry[];
@@ -22,8 +23,13 @@ const MapInternal = ({ murals }: MapProps) => {
 
   const markers = visibleMurals.map((mural) => {
     return (
-      <Marker position={[mural.location.lat, mural.location.lng]}>
-        <Popup>{mural.title || "Untitled"}</Popup>
+      <Marker
+        key={mural.id}
+        position={[mural.location.lat, mural.location.lng]}
+      >
+        <Popup>
+          <MuralPopup mural={mural} />
+        </Popup>
       </Marker>
     );
   });
