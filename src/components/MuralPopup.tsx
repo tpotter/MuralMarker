@@ -43,7 +43,7 @@ export const MuralPopup = ({ mural }: MuralPopupProps) => {
         {mural.dateEnd && mural.removalDateUncertain && <span>Unknown</span>}
       </div>
       <p>{mural.location.address || mural.location.neighborhood}</p>
-      <a href="">Go to mural page</a>
+      <a href={`/murals/${mural.id}`}>Go to mural page</a>
       <img src="/mural-placeholder.svg" />
     </div>
   );

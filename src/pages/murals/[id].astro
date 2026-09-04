@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { type Artist } from "../../lib/types";
+
+export async function getStaticPaths() {
+  const murals = await getCollection("murals");
+  return murals.map((entry) => ({
+    params: { id: entry.id },
+    props: { mural: entry.data },
+  }));
+}
+
+const { mural } = Astro.props;
+---
+
+<Base title={mural.title ?? "Mural Marker"}>
+  <div class="flex flex-col p-3">
+    <div class="flex gap-2">
+      <h1 class="text-3xl">{mural.title || "Untitled"}</h1>
+      <div>
+        {mural.status === "existing" ? "Visible" : "Removed"}
+      </div>
+    </div>
+    <div class="text-xs">
+      {`Entry Last Updated: ${mural.lastUpdated}`}
+    </div>
+    <div class="flex flex-col-reverse">
+      <dl>
+        <dt class="font-bold">
+          {mural.artists.length > 1 ? "Artists:" : "Artist:"}
+        </dt>
+        <dd>
+          {
+            mural.artists.map((artist: Artist, index: number) => {
+              return (
+                <div key={index} class="flex gap-1">
+                  <span>{artist.name}</span>
+                </div>
+              );
+            })
+          }
+        </dd>
+        <dt class="font-bold">Location:</dt>
+        <dd>
+          {mural.location.neighborhood} - {mural.location.address}
+        </dd>
+        <dt class="font-bold">Notes:</dt>
+        <dd>
+          {mural.description}
+        </dd>
+      </dl>
+      <div>
+        <img src="/mural-placeholder.svg" />
+      </div>
+    </div>
+  </div>
+</Base>
