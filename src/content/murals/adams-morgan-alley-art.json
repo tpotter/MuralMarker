@@ -1,7 +1,8 @@
 {
   "title": "Alley Blooms",
   "artists": [
-    { "name": "Priya Chandran", "url": "https://priyachandran.example.com" }
+    { "name": "Priya Chandran", "url": "https://priyachandran.example.com" },
+    { "name": "Guy Manderson" }
   ],
   "description": "A newly documented mural in an Adams Morgan alley; research on the piece is complete but no usable photograph has been taken yet.",
   "location": {
