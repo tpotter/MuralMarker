@@ -1,7 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
-import { type Artist } from "../../lib/types";
+import type { InferGetStaticPropsType } from "astro";
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 export async function getStaticPaths() {
   const murals = await getCollection("murals");
@@ -31,19 +33,30 @@ const { mural } = Astro.props;
           {mural.artists.length > 1 ? "Artists:" : "Artist:"}
         </dt>
         <dd>
-          {
-            mural.artists.map((artist: Artist, index: number) => {
-              return (
-                <div key={index} class="flex gap-1">
-                  <span>{artist.name}</span>
-                </div>
-              );
-            })
-          }
+          <div class="flex flex-col gap-1">
+            {
+              mural.artists.map((artist) => {
+                return (
+                  <div class="flex gap-2">
+                    <span>{artist.name}</span>
+                    {artist.url ? (
+                      <span>
+                        &lt;<a href={artist.url}>{artist.url}</a>&gt;
+                      </span>
+                    ) : (
+                      <span class="italic">No artist page available</span>
+                    )}
+                  </div>
+                );
+              })
+            }
+          </div>
         </dd>
         <dt class="font-bold">Location:</dt>
         <dd>
-          {mural.location.neighborhood} - {mural.location.address}
+          {mural.location.neighborhood}
+          {mural.location.address && <span>-</span>}
+          {mural.location.address}
         </dd>
         <dt class="font-bold">Notes:</dt>
         <dd>
