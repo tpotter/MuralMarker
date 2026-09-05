@@ -12,6 +12,7 @@ import { FilterProvider } from "./FilterProvider";
 import { Timeline } from "./Timeline";
 import { useMuralRange } from "../lib/useMuralRange";
 import { MuralPopup } from "./MuralPopup";
+import { DateDisplay } from "./DateDisplay";
 
 interface MapProps {
   murals: MuralEntry[];
@@ -36,6 +37,8 @@ const MapInternal = ({ murals }: MapProps) => {
 
   return (
     <div style={{ position: "relative", height: "100vh" }}>
+      <DateDisplay />
+
       <MapContainer
         id="mainMap"
         center={[38.8951, -77.0364]}

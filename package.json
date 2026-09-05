@@ -24,6 +24,7 @@
     "react": "19.0.0-rc.1",
     "react-dom": "19.0.0-rc.1",
     "react-leaflet": "5.0.0-rc.2",
+    "react-tooltip": "^6.0.8",
     "tailwindcss": "^4.3.3",
     "zod": "^4.4.3"
   },
