@@ -26,6 +26,9 @@ importers:
       astro:
         specifier: ^7.2.4
         version: 7.2.4(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.4.0)(jiti@2.7.0)
+      leaflet:
+        specifier: ^1.9.4
+        version: 1.9.4
       react:
         specifier: 19.0.0-rc.1
         version: 19.0.0-rc.1
@@ -57,9 +60,6 @@ importers:
       jsdom:
         specifier: ^30.0.1
         version: 30.0.1
-      leaflet:
-        specifier: ^1.9.4
-        version: 1.9.4
       prettier:
         specifier: ^3.9.6
         version: 3.9.6
