@@ -1,0 +1,32 @@
+{
+  "artists": [
+    {
+      "name": "Unknown artist"
+    }
+  ],
+  "description": "A layered graffiti-style piece on a former warehouse, since demolished for a mixed-use development.",
+  "location": {
+    "lat": 38.9078,
+    "lng": -77.0038,
+    "neighborhood": "NoMa"
+  },
+  "status": "removed",
+  "dateStart": {
+    "year": 2012,
+    "precision": "circa"
+  },
+  "dateEnd": {
+    "year": 2020,
+    "month": 1,
+    "precision": "exact"
+  },
+  "lastUpdated": "2025-12-20",
+  "photos": [
+    {
+      "key": "fixtures/noma-warehouse-graffiti-wall-01.webp",
+      "width": 1600,
+      "height": 1067
+    }
+  ],
+  "sources": []
+}

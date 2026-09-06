@@ -1,0 +1,27 @@
+{
+  "artists": [
+    {
+      "name": "Elena Vasquez"
+    }
+  ],
+  "description": "A mural of an old oak tree said to reference a since-removed neighborhood landmark tree.",
+  "location": {
+    "lat": 38.9598,
+    "lng": -77.0704,
+    "neighborhood": "Chevy Chase DC"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2017,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-04-14",
+  "photos": [
+    {
+      "key": "fixtures/chevy-chase-dc-oak-tree-mural-01.webp",
+      "width": 1400,
+      "height": 1050
+    }
+  ],
+  "sources": []
+}

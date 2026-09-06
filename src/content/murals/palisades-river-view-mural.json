@@ -1,0 +1,28 @@
+{
+  "artists": [
+    {
+      "name": "Luis Fernandez"
+    }
+  ],
+  "description": "A mural depicting the Potomac River gorge as seen from the Palisades neighborhood.",
+  "location": {
+    "lat": 38.9268,
+    "lng": -77.0938,
+    "neighborhood": "Palisades"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2016,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-02-27",
+  "photos": [
+    {
+      "key": "fixtures/palisades-river-view-mural-01.webp",
+      "width": 1600,
+      "height": 1067,
+      "dateTaken": "2022-06-11"
+    }
+  ],
+  "sources": []
+}

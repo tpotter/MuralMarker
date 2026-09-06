@@ -1,0 +1,21 @@
+{
+  "artists": [
+    {
+      "name": "Unknown artist"
+    }
+  ],
+  "description": "A weathered mural honoring Deanwood's early Black homeowners and the neighborhood's founding families.",
+  "location": {
+    "lat": 38.9027,
+    "lng": -76.9394,
+    "neighborhood": "Deanwood"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 1998,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-03-27",
+  "photos": [],
+  "sources": []
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Marquee Nights",
+  "artists": [
+    {
+      "name": "Jamal Carter",
+      "url": "https://jamalcarterstudio.example.com"
+    }
+  ],
+  "description": "A mural styled after vintage movie marquees, referencing the neighborhood's historic Uptown Theater.",
+  "location": {
+    "lat": 38.9351,
+    "lng": -77.0587,
+    "neighborhood": "Cleveland Park"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2019,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-07-24",
+  "photos": [
+    {
+      "key": "fixtures/cleveland-park-cinema-tribute-01.webp",
+      "width": 1600,
+      "height": 1200
+    }
+  ],
+  "sources": []
+}

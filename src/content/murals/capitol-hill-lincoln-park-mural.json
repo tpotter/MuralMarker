@@ -1,0 +1,40 @@
+{
+  "artists": [
+    {
+      "name": "Malik Thompson",
+      "url": "https://malikthompsonstudio.example.com"
+    }
+  ],
+  "description": "A now-removed mural near Lincoln Park that depicted local civil rights history; taken down after storm damage.",
+  "location": {
+    "lat": 38.8896,
+    "lng": -76.9825,
+    "neighborhood": "Capitol Hill"
+  },
+  "status": "removed",
+  "dateStart": {
+    "year": 2009,
+    "precision": "circa"
+  },
+  "dateEnd": {
+    "year": 2022,
+    "month": 9,
+    "precision": "exact"
+  },
+  "lastUpdated": "2025-11-30",
+  "photos": [
+    {
+      "key": "fixtures/capitol-hill-lincoln-park-mural-01.webp",
+      "width": 1400,
+      "height": 1050,
+      "caption": "Before storm damage",
+      "dateTaken": "2021-05-01"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Capitol Hill Restoration Society report",
+      "url": "https://example.com/lincoln-park-mural-report"
+    }
+  ]
+}

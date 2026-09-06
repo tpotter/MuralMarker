@@ -1,0 +1,21 @@
+{
+  "artists": [
+    {
+      "name": "Chen Wei"
+    }
+  ],
+  "description": "A row of painted portraits on rowhouse porch columns celebrating longtime Petworth residents.",
+  "location": {
+    "lat": 38.9541,
+    "lng": -77.0231,
+    "neighborhood": "Petworth"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2021,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-06-14",
+  "photos": [],
+  "sources": []
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Solar Bloom",
+  "artists": [
+    {
+      "name": "Devon Marsh"
+    }
+  ],
+  "description": "A mural celebrating Takoma's community solar cooperative, painted on a rec center wall.",
+  "location": {
+    "lat": 38.9765,
+    "lng": -77.0161,
+    "address": "Takoma Community Center",
+    "neighborhood": "Takoma"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2023,
+    "month": 6,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-08-21",
+  "photos": [
+    {
+      "key": "fixtures/takoma-solar-panel-mural-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "Rec center wall",
+      "credit": "Takoma Park Silver Spring Co-op"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Co-op newsletter",
+      "url": "https://example.com/takoma-solar-coop-newsletter"
+    }
+  ]
+}

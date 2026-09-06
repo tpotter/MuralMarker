@@ -1,0 +1,29 @@
+{
+  "title": "Literary Wall",
+  "artists": [
+    {
+      "name": "Grace Kim"
+    }
+  ],
+  "description": "A mural featuring quotes and portraits of authors connected to Dupont Circle's bookstore culture.",
+  "location": {
+    "lat": 38.9097,
+    "lng": -77.0434,
+    "neighborhood": "Dupont Circle"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2019,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-07-08",
+  "photos": [
+    {
+      "key": "fixtures/dupont-circle-literary-wall-01.webp",
+      "width": 1400,
+      "height": 1867,
+      "caption": "Full wall"
+    }
+  ],
+  "sources": []
+}

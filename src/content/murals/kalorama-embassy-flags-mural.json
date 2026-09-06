@@ -1,0 +1,38 @@
+{
+  "title": "Flags of Kalorama",
+  "artists": [
+    {
+      "name": "Isabella Rossi"
+    },
+    {
+      "name": "Andre Wilson"
+    }
+  ],
+  "description": "A mural of stylized flags representing the many embassies historically located in Kalorama.",
+  "location": {
+    "lat": 38.9161,
+    "lng": -77.0498,
+    "neighborhood": "Kalorama"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2014,
+    "month": 11,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-01-08",
+  "photos": [
+    {
+      "key": "fixtures/kalorama-embassy-flags-mural-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "Full wall"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Kalorama Citizens Association bulletin",
+      "url": "https://example.com/kalorama-flags-mural"
+    }
+  ]
+}

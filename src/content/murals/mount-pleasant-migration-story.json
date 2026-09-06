@@ -1,0 +1,39 @@
+{
+  "title": "Migration Story",
+  "artists": [
+    {
+      "name": "Sofia Petrov",
+      "url": "https://sofiapetrov.example.com"
+    }
+  ],
+  "description": "A mural narrating the immigrant history of Mount Pleasant through layered imagery of ships, homes, and street life.",
+  "location": {
+    "lat": 38.9339,
+    "lng": -77.0392,
+    "address": "Mount Pleasant St NW",
+    "neighborhood": "Mount Pleasant"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2019,
+    "month": 9,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-07-19",
+  "photos": [
+    {
+      "key": "fixtures/mount-pleasant-migration-story-01.webp",
+      "width": 1600,
+      "height": 900,
+      "caption": "Wide shot",
+      "dateTaken": "2024-10-03",
+      "credit": "Sofia Petrov"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Mount Pleasant Main Street feature",
+      "url": "https://example.com/mtpleasant-migration-story"
+    }
+  ]
+}

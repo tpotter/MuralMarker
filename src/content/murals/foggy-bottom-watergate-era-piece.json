@@ -1,0 +1,32 @@
+{
+  "title": "Watergate Era",
+  "artists": [
+    {
+      "name": "Marcus Webb"
+    }
+  ],
+  "description": "A now-removed mural referencing 1970s Foggy Bottom streetscapes, painted over when the building changed ownership.",
+  "location": {
+    "lat": 38.9007,
+    "lng": -77.0472,
+    "neighborhood": "Foggy Bottom"
+  },
+  "status": "removed",
+  "dateStart": {
+    "year": 1994,
+    "precision": "circa"
+  },
+  "dateEnd": {
+    "year": 2012,
+    "precision": "circa"
+  },
+  "removalDateUncertain": true,
+  "lastUpdated": "2026-01-15",
+  "photos": [],
+  "sources": [
+    {
+      "label": "GWU campus history archive",
+      "url": "https://example.com/gwu-foggy-bottom-archive"
+    }
+  ]
+}

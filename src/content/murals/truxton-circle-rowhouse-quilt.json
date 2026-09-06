@@ -1,0 +1,43 @@
+{
+  "artists": [
+    {
+      "name": "Tobias Kruger"
+    },
+    {
+      "name": "Amara Johnson"
+    }
+  ],
+  "description": "A quilt-pattern mural inspired by textile traditions, spanning three adjoining rowhouse facades.",
+  "location": {
+    "lat": 38.9111,
+    "lng": -77.0113,
+    "neighborhood": "Truxton Circle"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2023,
+    "month": 3,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-08-12",
+  "photos": [
+    {
+      "key": "fixtures/truxton-circle-rowhouse-quilt-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "All three facades"
+    },
+    {
+      "key": "fixtures/truxton-circle-rowhouse-quilt-02.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "Center facade detail"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Artist collective site",
+      "url": "https://example.com/kruger-johnson-quilt-mural"
+    }
+  ]
+}

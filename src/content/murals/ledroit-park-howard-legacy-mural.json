@@ -1,0 +1,36 @@
+{
+  "title": "Legacy",
+  "artists": [
+    {
+      "name": "Aaliyah Brooks"
+    }
+  ],
+  "description": "A mural honoring Howard University alumni and LeDroit Park's role in Black intellectual history.",
+  "location": {
+    "lat": 38.9165,
+    "lng": -77.0166,
+    "address": "3rd St NW near Howard University",
+    "neighborhood": "LeDroit Park"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2013,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-07-13",
+  "photos": [
+    {
+      "key": "fixtures/ledroit-park-howard-legacy-mural-01.webp",
+      "width": 1500,
+      "height": 2000,
+      "caption": "Full height view",
+      "credit": "Howard University Office of the Provost"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Howard University news release",
+      "url": "https://example.com/ledroit-legacy-mural-release"
+    }
+  ]
+}

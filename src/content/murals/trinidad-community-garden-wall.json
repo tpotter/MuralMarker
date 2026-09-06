@@ -1,0 +1,32 @@
+{
+  "title": "Garden Wall",
+  "artists": [
+    {
+      "name": "Naomi Okafor",
+      "url": "https://naomiokafor.example.com"
+    }
+  ],
+  "description": "A mural of native plants and pollinators painted alongside a community garden fence.",
+  "location": {
+    "lat": 38.9089,
+    "lng": -76.9803,
+    "address": "Neal St NE",
+    "neighborhood": "Trinidad"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2022,
+    "month": 5,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-08-03",
+  "photos": [
+    {
+      "key": "fixtures/trinidad-community-garden-wall-01.webp",
+      "width": 1500,
+      "height": 1125,
+      "caption": "Spring bloom season"
+    }
+  ],
+  "sources": []
+}

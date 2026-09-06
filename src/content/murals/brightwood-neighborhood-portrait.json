@@ -1,0 +1,40 @@
+{
+  "artists": [
+    {
+      "name": "Naomi Okafor"
+    }
+  ],
+  "description": "A group portrait mural of longtime Brightwood residents, painted from photographs submitted by families.",
+  "location": {
+    "lat": 38.9646,
+    "lng": -77.0264,
+    "neighborhood": "Brightwood"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2020,
+    "month": 8,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-05-17",
+  "photos": [
+    {
+      "key": "fixtures/brightwood-neighborhood-portrait-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "Full portrait wall"
+    },
+    {
+      "key": "fixtures/brightwood-neighborhood-portrait-02.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "Detail, center panel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Brightwood history project",
+      "url": "https://example.com/brightwood-portrait-mural"
+    }
+  ]
+}

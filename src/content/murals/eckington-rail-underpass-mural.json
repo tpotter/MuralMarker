@@ -1,0 +1,30 @@
+{
+  "title": "Underpass Currents",
+  "artists": [
+    {
+      "name": "Elena Vasquez"
+    }
+  ],
+  "description": "A colorful abstract mural brightening a formerly graffiti-covered rail underpass.",
+  "location": {
+    "lat": 38.9187,
+    "lng": -77.0002,
+    "address": "R St NE rail underpass",
+    "neighborhood": "Eckington"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2018,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-06-27",
+  "photos": [
+    {
+      "key": "fixtures/eckington-rail-underpass-mural-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "credit": "DDOT Art in Transit"
+    }
+  ],
+  "sources": []
+}
