@@ -1,0 +1,29 @@
+{
+  "title": "Trailhead",
+  "artists": [
+    {
+      "name": "Priya Chandran",
+      "url": "https://priyachandran.example.com"
+    }
+  ],
+  "description": "A mural marking the start of a Metropolitan Branch Trail spur, featuring stylized native birds.",
+  "location": {
+    "lat": 38.9514,
+    "lng": -77.0022,
+    "neighborhood": "Fort Totten"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2022,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-07-30",
+  "photos": [
+    {
+      "key": "fixtures/fort-totten-trailhead-mural-01.webp",
+      "width": 1600,
+      "height": 1200
+    }
+  ],
+  "sources": []
+}

@@ -1,0 +1,26 @@
+{
+  "artists": [
+    {
+      "name": "DJ Ramirez"
+    }
+  ],
+  "description": "A mural referencing Brookland's nickname 'Little Rome' through terra-cotta-toned architectural motifs.",
+  "location": {
+    "lat": 38.9337,
+    "lng": -76.9928,
+    "neighborhood": "Brookland"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2020,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-04-30",
+  "photos": [],
+  "sources": [
+    {
+      "label": "Brookland Arts Walk map",
+      "url": "https://example.com/brookland-arts-walk"
+    }
+  ]
+}

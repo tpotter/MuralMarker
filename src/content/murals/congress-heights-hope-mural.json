@@ -1,0 +1,41 @@
+{
+  "title": "Rising Hope",
+  "artists": [
+    {
+      "name": "Nina Petrovic"
+    },
+    {
+      "name": "Andre Wilson",
+      "url": "https://andrewilsonart.example.com"
+    }
+  ],
+  "description": "A large mural of hands lifting a sunrise, created with input from Congress Heights youth.",
+  "location": {
+    "lat": 38.8407,
+    "lng": -76.9883,
+    "address": "MLK Ave SE",
+    "neighborhood": "Congress Heights"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2021,
+    "month": 7,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-06-09",
+  "photos": [
+    {
+      "key": "fixtures/congress-heights-hope-mural-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "Community unveiling day",
+      "dateTaken": "2021-07-24"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ward 8 arts grant report",
+      "url": "https://example.com/ward8-arts-grant-report"
+    }
+  ]
+}

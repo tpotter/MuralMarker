@@ -1,0 +1,38 @@
+{
+  "artists": [
+    {
+      "name": "Jamal Carter"
+    }
+  ],
+  "description": "A mural depicting the Maine Avenue Fish Market's vendors, painted on a nearby pier building; removed during waterfront redevelopment and not yet replaced.",
+  "location": {
+    "lat": 38.8768,
+    "lng": -77.0197,
+    "neighborhood": "Southwest Waterfront"
+  },
+  "status": "removed",
+  "dateStart": {
+    "year": 2008,
+    "precision": "circa"
+  },
+  "dateEnd": {
+    "year": 2017,
+    "precision": "circa"
+  },
+  "removalDateUncertain": true,
+  "lastUpdated": "2026-02-02",
+  "photos": [
+    {
+      "key": "fixtures/southwest-waterfront-fishmongers-01.webp",
+      "width": 1500,
+      "height": 1000,
+      "caption": "Pier building, pre-redevelopment"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Wharf redevelopment historical review",
+      "url": "https://example.com/wharf-historical-review"
+    }
+  ]
+}

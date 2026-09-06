@@ -1,0 +1,39 @@
+{
+  "artists": [
+    {
+      "name": "Kwame Asante"
+    }
+  ],
+  "description": "An industrial-themed mural near the old freight yards, referencing Ivy City's rail history; removed when the building was demolished for redevelopment.",
+  "location": {
+    "lat": 38.9145,
+    "lng": -76.9772,
+    "neighborhood": "Ivy City"
+  },
+  "status": "removed",
+  "dateStart": {
+    "year": 2010,
+    "precision": "circa"
+  },
+  "dateEnd": {
+    "year": 2021,
+    "month": 11,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-03-11",
+  "photos": [
+    {
+      "key": "fixtures/ivy-city-freight-yard-piece-01.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "Before demolition",
+      "dateTaken": "2021-09-15"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Redevelopment permit filing",
+      "url": "https://example.com/ivy-city-demo-permit"
+    }
+  ]
+}

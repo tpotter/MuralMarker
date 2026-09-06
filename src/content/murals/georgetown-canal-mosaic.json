@@ -1,0 +1,38 @@
+{
+  "title": "Canal Mosaic",
+  "artists": [
+    {
+      "name": "Maria Gonzalez",
+      "url": "https://mariagonzalezart.example.com"
+    }
+  ],
+  "description": "A tiled mosaic mural depicting the C&O Canal's barge era, installed along the towpath retaining wall.",
+  "location": {
+    "lat": 38.9047,
+    "lng": -77.0632,
+    "address": "C&O Canal towpath near Thomas Jefferson St NW",
+    "neighborhood": "Georgetown"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2017,
+    "month": 6,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-07-02",
+  "photos": [
+    {
+      "key": "fixtures/georgetown-canal-mosaic-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "Mosaic panel, midday light",
+      "dateTaken": "2025-05-10"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Georgetown Heritage newsletter",
+      "url": "https://example.com/georgetown-heritage-canal-mosaic"
+    }
+  ]
+}

@@ -55,7 +55,7 @@ export const Timeline = ({ max, baseDate }: TimelineProps) => {
   }, [timelineFilter]);
 
   return (
-    <div className="absolute z-[1100] bottom-24 left-1/2 -translate-x-1/2 w-4/5">
+    <div className="absolute z-[1100] bottom-24 left-1/2 -translate-x-1/2 w-4/5 lg:w-1/2">
       <input
         type="range"
         id="timeline"

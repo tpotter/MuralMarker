@@ -1,0 +1,30 @@
+{
+  "title": "Victorian Bloom",
+  "artists": [
+    {
+      "name": "Luis Fernandez",
+      "url": "https://luisfernandez.example.com"
+    }
+  ],
+  "description": "A trompe-l'oeil mural extending the Victorian architectural details of a Logan Circle rowhouse.",
+  "location": {
+    "lat": 38.9098,
+    "lng": -77.0311,
+    "address": "13th St NW near Logan Circle",
+    "neighborhood": "Logan Circle"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2015,
+    "month": 8,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-02-18",
+  "photos": [],
+  "sources": [
+    {
+      "label": "Logan Circle Historic District survey",
+      "url": "https://example.com/logan-circle-survey"
+    }
+  ]
+}

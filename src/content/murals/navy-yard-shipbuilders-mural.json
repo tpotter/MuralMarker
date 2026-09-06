@@ -1,0 +1,32 @@
+{
+  "title": "Shipbuilders",
+  "artists": [
+    {
+      "name": "Isabella Rossi",
+      "url": "https://isabellarossi.example.com"
+    }
+  ],
+  "description": "A mural commemorating the workers of the historic Washington Navy Yard shipbuilding operations.",
+  "location": {
+    "lat": 38.8763,
+    "lng": -77.0047,
+    "neighborhood": "Navy Yard"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2020,
+    "month": 10,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-05-05",
+  "photos": [
+    {
+      "key": "fixtures/navy-yard-shipbuilders-mural-01.webp",
+      "width": 1600,
+      "height": 1067,
+      "caption": "Riverside view",
+      "credit": "Isabella Rossi"
+    }
+  ],
+  "sources": []
+}

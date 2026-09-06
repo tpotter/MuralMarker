@@ -1,0 +1,28 @@
+{
+  "title": "Market Day",
+  "artists": [
+    {
+      "name": "Unknown artist"
+    }
+  ],
+  "description": "A faded but beloved mural of a bustling market scene, painted on the side of a corner store.",
+  "location": {
+    "lat": 38.9284,
+    "lng": -77.0324,
+    "neighborhood": "Columbia Heights"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2005,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-05-22",
+  "photos": [
+    {
+      "key": "fixtures/columbia-heights-market-scene-01.webp",
+      "width": 1400,
+      "height": 1050
+    }
+  ],
+  "sources": []
+}

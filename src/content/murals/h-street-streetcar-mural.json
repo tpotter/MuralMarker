@@ -1,0 +1,44 @@
+{
+  "title": "Streetcar Revival",
+  "artists": [
+    {
+      "name": "Kwame Asante"
+    },
+    {
+      "name": "Sofia Petrov"
+    }
+  ],
+  "description": "A mural tracing H Street's streetcar history from its 1900s heyday to the modern DC Streetcar.",
+  "location": {
+    "lat": 38.9004,
+    "lng": -76.9877,
+    "address": "H St NE near 8th St",
+    "neighborhood": "H Street/Atlas District"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2015,
+    "month": 2,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-08-18",
+  "photos": [
+    {
+      "key": "fixtures/h-street-streetcar-mural-01.webp",
+      "width": 1800,
+      "height": 1200,
+      "caption": "Full mural, evening light",
+      "dateTaken": "2026-01-05"
+    }
+  ],
+  "sources": [
+    {
+      "label": "H Street Main Street archive",
+      "url": "https://example.com/h-street-streetcar-mural"
+    },
+    {
+      "label": "DC Streetcar centennial feature",
+      "url": "https://example.com/dc-streetcar-centennial"
+    }
+  ]
+}

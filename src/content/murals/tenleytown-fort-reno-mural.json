@@ -1,0 +1,32 @@
+{
+  "title": "Fort Reno Summers",
+  "artists": [
+    {
+      "name": "Amara Johnson",
+      "url": "https://amarajohnsonart.example.com"
+    }
+  ],
+  "description": "A mural referencing the free summer concert series at Fort Reno Park.",
+  "location": {
+    "lat": 38.9479,
+    "lng": -77.0797,
+    "address": "Fort Reno Park perimeter",
+    "neighborhood": "Tenleytown"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2021,
+    "month": 6,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-06-30",
+  "photos": [
+    {
+      "key": "fixtures/tenleytown-fort-reno-mural-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "Concert crowd motif"
+    }
+  ],
+  "sources": []
+}

@@ -1,0 +1,51 @@
+{
+  "title": "Jazz Legends",
+  "artists": [
+    {
+      "name": "Aaliyah Brooks",
+      "url": "https://instagram.com/aaliyahbrooksart"
+    },
+    {
+      "name": "Marcus Webb"
+    }
+  ],
+  "description": "A large-scale mural honoring Duke Ellington and other jazz musicians tied to the Shaw neighborhood's musical history.",
+  "location": {
+    "lat": 38.9126,
+    "lng": -77.0225,
+    "address": "7th St NW near S St",
+    "neighborhood": "Shaw"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2016,
+    "month": 4,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-08-01",
+  "photos": [
+    {
+      "key": "fixtures/shaw-jazz-legends-mural-01.webp",
+      "width": 1800,
+      "height": 1200,
+      "caption": "Full mural view",
+      "credit": "Marcus Webb"
+    },
+    {
+      "key": "fixtures/shaw-jazz-legends-mural-02.webp",
+      "width": 1200,
+      "height": 1600,
+      "caption": "Detail of Ellington portrait"
+    }
+  ],
+  "sources": [
+    {
+      "label": "DC Public Art registry",
+      "url": "https://example.com/dcpublicart/shaw-jazz-legends"
+    },
+    {
+      "label": "Artist interview",
+      "url": "https://example.com/aaliyah-brooks-interview"
+    }
+  ]
+}

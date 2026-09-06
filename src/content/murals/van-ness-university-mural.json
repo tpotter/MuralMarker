@@ -1,0 +1,27 @@
+{
+  "title": "Knowledge Tree",
+  "artists": [
+    {
+      "name": "Tobias Kruger"
+    }
+  ],
+  "description": "A mural of a tree with books as leaves, commissioned by a nearby university library.",
+  "location": {
+    "lat": 38.9438,
+    "lng": -77.0629,
+    "neighborhood": "Van Ness"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2018,
+    "precision": "circa"
+  },
+  "lastUpdated": "2026-03-05",
+  "photos": [],
+  "sources": [
+    {
+      "label": "University library commission records",
+      "url": "https://example.com/van-ness-knowledge-tree"
+    }
+  ]
+}

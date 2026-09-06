@@ -1,0 +1,41 @@
+{
+  "title": "Zoo Parade",
+  "artists": [
+    {
+      "name": "Grace Kim"
+    },
+    {
+      "name": "Malik Thompson"
+    }
+  ],
+  "description": "A playful mural of zoo animals marching toward Connecticut Ave, near the National Zoo entrance.",
+  "location": {
+    "lat": 38.9251,
+    "lng": -77.0534,
+    "address": "Connecticut Ave NW near Zoo entrance",
+    "neighborhood": "Woodley Park"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2016,
+    "month": 5,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-06-02",
+  "photos": [
+    {
+      "key": "fixtures/woodley-park-zoo-animals-mural-01.webp",
+      "width": 1700,
+      "height": 1133,
+      "caption": "Elephant and giraffe panel",
+      "dateTaken": "2025-03-22",
+      "credit": "Grace Kim"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smithsonian National Zoo community art page",
+      "url": "https://example.com/zoo-parade-mural"
+    }
+  ]
+}

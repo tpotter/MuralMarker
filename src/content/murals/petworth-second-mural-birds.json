@@ -1,0 +1,38 @@
+{
+  "title": "Songbirds",
+  "artists": [
+    {
+      "name": "Chen Wei"
+    },
+    {
+      "name": "Naomi Okafor"
+    }
+  ],
+  "description": "A mural of DC-native songbirds painted along a Petworth alley as part of an urban wildlife awareness campaign.",
+  "location": {
+    "lat": 38.9569,
+    "lng": -77.0219,
+    "neighborhood": "Petworth"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2024,
+    "month": 4,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-08-28",
+  "photos": [
+    {
+      "key": "fixtures/petworth-second-mural-birds-01.webp",
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "key": "fixtures/petworth-second-mural-birds-02.webp",
+      "width": 1600,
+      "height": 1200,
+      "caption": "Cardinal detail"
+    }
+  ],
+  "sources": []
+}
