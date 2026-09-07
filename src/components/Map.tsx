@@ -17,6 +17,8 @@ import L from "leaflet";
 import markerIcon from "leaflet/dist/images/marker-icon.png?url";
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png?url";
 import markerShadow from "leaflet/dist/images/marker-shadow.png?url";
+import { IconLink } from "./IconLink";
+import InformationSlabCircleOutlineIcon from "@iconify-react/mdi/information-slab-circle-outline";
 
 L.Icon.Default.imagePath = "";
 L.Icon.Default.mergeOptions({
@@ -48,6 +50,15 @@ const MapInternal = ({ murals }: MapProps) => {
   return (
     <div style={{ position: "relative", height: "100vh" }}>
       <DateDisplay />
+      <div className="absolute z-[1000] right-6 top-20 md:top-28">
+        <IconLink
+          href="/about"
+          icon={
+            <InformationSlabCircleOutlineIcon className="bg-neutral-100 p-2 rounded-xl h-10 md:h-12" />
+          }
+          label="Go to About page"
+        />
+      </div>
 
       <MapContainer
         id="mainMap"
