@@ -4,9 +4,7 @@
 >
 > Every entry in `src/content/murals/` is fabricated for development and
 > testing. The artist names, titles, descriptions, dates, addresses, photo
-> credits, and sources are invented. They are deliberately realistic — real
-> neighborhoods, plausible names, multi-artist entries, a mix of existing and
-> removed works — so that layout, filtering, and the timeline get exercised
+> credits, and sources are invented. They are deliberately realistic so that layout, filtering, and the timeline get exercised
 > against data shaped like the real thing. None of it documents an actual
 > mural, and no real artist or photographer is credited anywhere in this
 > repository.
