@@ -1,7 +1,10 @@
 {
   "title": "Flower Wall",
   "artists": [
-    { "name": "Jordan Reyes", "url": "https://instagram.com/jordanreyesart" }
+    {
+      "name": "Jordan Reyes",
+      "url": "https://example.com/artists/jordan-reyes"
+    }
   ],
   "description": "A vibrant floral mural covering the side of a rowhouse near North Capitol, added during a neighborhood beautification project.",
   "location": {

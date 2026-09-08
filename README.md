@@ -1,5 +1,18 @@
 # Mural Marker
 
+> **Under construction — all mural data is mock data.**
+>
+> Every entry in `src/content/murals/` is fabricated for development and
+> testing. The artist names, titles, descriptions, dates, addresses, photo
+> credits, and sources are invented. They are deliberately realistic so that layout, filtering, and the timeline get exercised
+> against data shaped like the real thing. None of it documents an actual
+> mural, and no real artist or photographer is credited anywhere in this
+> repository.
+>
+> Real records will replace this set before the archive is presented as one.
+> Until then, please don't cite, scrape, or reuse anything in
+> `src/content/murals/` as fact.
+
 ## Overview
 
 Washington D.C. is home to a thriving community of artists and much of
@@ -16,10 +29,16 @@ history.
 
 The material on this site sits in a few different layers, and each one carries its own rights.
 
+### Site code
+
+The source code for this site is licensed under the MIT license — see
+[LICENSE](LICENSE).
+
 ### Original content
 
-The writing, site code, mural locations, and other descriptive information I've compiled here are licensed under a
-Creative Commons Attribution 4.0 International license (https://creativecommons.org/licenses/by/4.0/).
+The writing, mural locations, and other descriptive information I've compiled here are licensed under a
+Creative Commons Attribution 4.0 International license (https://creativecommons.org/licenses/by/4.0/) —
+see [LICENSE-CONTENT](LICENSE-CONTENT).
 Feel free to use it, adapt it, build on it, just credit Mural Marker and link back.
 
 ### Murals
