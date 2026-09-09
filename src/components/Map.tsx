@@ -78,7 +78,7 @@ const MapInternal = ({ murals }: MapProps) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <ZoomControl position="bottomright" />
+        <ZoomControl position="topright" />
         {markers}
       </MapContainer>
       <Timeline max={totalMonths} baseDate={baseMonth} />

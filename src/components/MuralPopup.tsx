@@ -18,8 +18,10 @@ export const MuralPopup = ({ mural }: MuralPopupProps) => {
   return (
     <div className="flex flex-col">
       <h3 className="text-xl">{mural.title || "Untitled"}</h3>
-      <div className="flex gap-1">
-        {mural.artists.map((artist) => artist.name)}
+      <div className="flex flex-col">
+        {mural.artists.map((artist) => (
+          <span>{artist.name}</span>
+        ))}
       </div>
       <div className="flex gap-1">
         <span>

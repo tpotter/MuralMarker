@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@layer base {
+  a {
+    @apply underline text-blue-600 hover:text-blue-800;
+  }
+}
+
+.leaflet-control-zoom {
+  /* Zoom control position override */
+  right: 16px;
+  top: 160px;
+}
