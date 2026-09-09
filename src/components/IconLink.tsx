@@ -17,6 +17,7 @@ export const IconLink = ({
       aria-label={label}
       target={openInNewTab ? "_blank" : undefined}
       rel={openInNewTab ? "noopener noreferrer" : undefined}
+      className="text-inherit no-underline"
     >
       {icon}
     </a>
