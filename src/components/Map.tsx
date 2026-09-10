@@ -19,6 +19,7 @@ import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png?url";
 import markerShadow from "leaflet/dist/images/marker-shadow.png?url";
 import { IconLink } from "./IconLink";
 import InformationSlabCircleOutlineIcon from "@iconify-react/mdi/information-slab-circle-outline";
+import { MAP_BOUNDS } from "../lib/constants";
 
 L.Icon.Default.imagePath = "";
 L.Icon.Default.mergeOptions({
@@ -66,6 +67,11 @@ const MapInternal = ({ murals }: MapProps) => {
         zoom={13}
         scrollWheelZoom={true}
         zoomControl={false}
+        maxBounds={MAP_BOUNDS}
+        maxBoundsViscosity={0.6}
+        maxZoom={17}
+        minZoom={11}
+
         style={{
           position: "absolute",
           top: 0,
@@ -77,6 +83,7 @@ const MapInternal = ({ murals }: MapProps) => {
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          bounds={MAP_BOUNDS}
         />
         <ZoomControl position="topright" />
         {markers}
