@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import { MAP_BOUNDS } from "./lib/constants";
 
 /* ---------- shared shapes (requirements §1.1–§1.3) ---------- */
 
@@ -39,17 +40,22 @@ const Source = z
 
 /* ---------- the entry (requirements §1) ---------- */
 // NOTE: no `id` — identity is the filename (§3.5)
-
 const Mural = z
   .object({
     title: z.string().min(1).optional(),
     artists: z.array(Artist).min(1),
     description: z.string().min(1),
-
     location: z
       .object({
-        lat: z.number().min(38.79).max(39.0), // DC bounding box
-        lng: z.number().min(-77.12).max(-76.9),
+        lat: z
+          .number()
+          .min(MAP_BOUNDS[0][0] + 0.01)
+          .max(MAP_BOUNDS[1][0] - 0.01), // DC bounding box
+        // IEEE754 makes MAP_BOUNDS[0][1] slightly inaccurate - if a valid mural on the exact border fails, this is why
+        lng: z
+          .number()
+          .min(MAP_BOUNDS[0][1] + 0.01)
+          .max(MAP_BOUNDS[1][1] - 0.01),
         address: z.string().optional(),
         neighborhood: z.string().optional(),
       })
