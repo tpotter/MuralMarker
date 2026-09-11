@@ -1,5 +1,6 @@
 ---
 import "@fontsource/alata";
+import SiteName from "./SiteName.astro";
 ---
 
 <style>
@@ -7,8 +8,8 @@ import "@fontsource/alata";
     font-family: var(--font-alata);
   }
 </style>
-<h1
-  class="absolute z-[1000] text-3xl sm:text-4xl md:text-6xl right-3 md:right-6 top-4 bg-neutral-100 p-2 rounded-xl"
+<div
+  class="absolute z-[1000] right-3 md:right-6 top-4 bg-neutral-100 p-2 rounded-xl"
 >
-  Mural Marker
-</h1>
+  <SiteName />
+</div>

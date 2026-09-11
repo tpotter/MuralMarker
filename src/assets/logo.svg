@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 200 200" color="#8E7E7E" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.85">
+  <defs>
+    <path id="dwm-logo-pin" d="M0 65 C-16 46 -39 10 -39 -21 C-39 -43.6 -21.5 -62 0 -62 C21.5 -62 39 -43.6 39 -21 C39 10 16 46 0 65 Z"/>
+    <!-- Grid is visible inside the inner ring, except where the pin covers it -->
+    <mask id="dwm-logo-grid-mask" maskUnits="userSpaceOnUse" x="-100" y="-100" width="200" height="200">
+      <circle r="85.5" fill="#fff" stroke="none"/>
+      <use href="#dwm-logo-pin" fill="#000" stroke="none"/>
+    </mask>
+  </defs>
+
+  <path mask="url(#dwm-logo-grid-mask)" stroke-width="0.45" d="M-90 31 H90 M-90 39.5 H90 M-90 48 H90 M-90 56.5 H90 M-90 65 H90 M-90 73.5 H90 M-90 82 H90 M-85 31 V90 M-76.5 31 V90 M-68 31 V90 M-59.5 31 V90 M-51 31 V90 M-42.5 31 V90 M-34 31 V90 M-25.5 31 V90 M-17 31 V90 M-8.5 31 V90 M0 31 V90 M8.5 31 V90 M17 31 V90 M25.5 31 V90 M34 31 V90 M42.5 31 V90 M51 31 V90 M59.5 31 V90 M68 31 V90 M76.5 31 V90 M85 31 V90"/>
+
+  <g>
+    <circle r="96"/>
+    <circle r="85.5"/>
+    <use href="#dwm-logo-pin"/>
+    <circle cy="-16.8" r="25.9"/>
+  </g>
+</svg>
