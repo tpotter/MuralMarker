@@ -1,0 +1,21 @@
+---
+interface Props {
+  visibility: "removed" | "existing";
+}
+
+const { visibility } = Astro.props;
+---
+
+<div class="text-neutral-50">
+  {
+    visibility === "existing" ? (
+      <div class="text-lg pl-2 pr-2 pt-1 pb-1 bg-emerald-800 rounded-2xl border-emerald-900 border-2">
+        Visible
+      </div>
+    ) : (
+      <div class="text-lg pl-2 pr-2 pt-1 pb-1 bg-red-800 rounded-2xl border-red-900 border-2">
+        Removed
+      </div>
+    )
+  }
+</div>
