@@ -1,0 +1,32 @@
+{
+  "title": "Liberation is a World We Weave",
+  "artists": [
+    {
+      "name": "Shani Shih",
+      "url": "https://www.shanishih.com/"
+    }
+  ],
+  "description": "Mural",
+  "location": {
+    "lat": 38.925090,
+    "lng": -77.037998,
+    "address": "1640 Columbia Rd. NW",
+    "neighborhood": ""
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2026,
+    "month": 9,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-09-17",
+  "photos": [
+    {
+      "file": "liberation-is-a-world-we-weave",
+      "width": 6240,
+      "height": 4160,
+      "caption": "Community unveiling day",
+      "dateTaken": "2026-09-13"
+    }
+  ]
+}
