@@ -26,8 +26,6 @@ export const MuralPopup = ({ mural }: MuralPopupProps) => {
   const alt =
     mural.photos.length > 0 ? mural.photos[0].caption : "No image available";
 
-  console.log(photoProps.src);
-
   return (
     <div className="flex flex-col">
       <h3 className="text-xl">{mural.title || "Untitled"}</h3>
@@ -60,12 +58,11 @@ export const MuralPopup = ({ mural }: MuralPopupProps) => {
       <p>{mural.location.address || mural.location.neighborhood}</p>
       <a href={`/murals/${mural.id}`}>Go to mural page</a>
       <img
-        // src="/mural-placeholder.svg"
-
         // TODO give alternate ALT value
         alt={alt}
-        loading="lazy"
+        loading="eager"
         decoding="async"
+        className="w-full h-auto bg-neutral-200 bg-[url('/photo-loading.svg')] bg-center bg-no-repeat bg-[length:48px]"
         {...photoProps}
       />
     </div>

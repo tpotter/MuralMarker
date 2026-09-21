@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 200 200" color="#7A6C6C" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.4" role="img" aria-label="Loading photo">
+  <!-- Loading indicator built from the Mural Marker logo mark: the arc travels
+       the inner ring. Self-contained on purpose - it is used as a CSS
+       background-image, so the page stylesheet and scripts cannot reach inside.
+       The arc is a dash on the ring itself, moved with stroke-dashoffset
+       rather than by rotating the circle, so no transform-origin is involved
+       and it cannot drift off the ring. -->
+  <defs>
+    <path id="dwm-logo-pin" d="M0 65 C-16 46 -39 10 -39 -21 C-39 -43.6 -21.5 -62 0 -62 C21.5 -62 39 -43.6 39 -21 C39 10 16 46 0 65 Z"/>
+  </defs>
+
+  <style>
+    /* r=82, so the circumference is 2*pi*82 = 515.2: a 129-unit dash is ~25%. */
+    .dwm-arc {
+      stroke-dasharray: 129 386.2;
+      animation: dwm-sweep 1.6s linear infinite;
+    }
+    .dwm-pin {
+      animation: dwm-breathe 1.6s ease-in-out infinite;
+    }
+
+    @keyframes dwm-sweep {
+      from { stroke-dashoffset: 0; }
+      to   { stroke-dashoffset: -515.2; }
+    }
+    @keyframes dwm-breathe {
+      0%, 100% { opacity: 0.45; }
+      50%      { opacity: 0.9; }
+    }
+
+    /* Falls back to the plain logo mark, no motion. */
+    @media (prefers-reduced-motion: reduce) {
+      .dwm-arc {
+        animation: none;
+        stroke-dasharray: none;
+        opacity: 0.55;
+      }
+      .dwm-pin {
+        animation: none;
+        opacity: 0.9;
+      }
+    }
+  </style>
+
+  <circle r="94" opacity="0.28"/>
+
+  <!-- Faint inner ring, with the travelling arc riding on top of it -->
+  <circle r="82" opacity="0.28"/>
+  <circle class="dwm-arc" r="82" stroke-width="4.2"/>
+
+  <g class="dwm-pin">
+    <use href="#dwm-logo-pin"/>
+    <circle cy="-16.8" r="25.9"/>
+  </g>
+</svg>
