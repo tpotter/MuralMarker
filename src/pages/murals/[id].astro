@@ -19,8 +19,14 @@ export async function getStaticPaths() {
 const { mural } = Astro.props;
 const { id } = Astro.params;
 
-// src="/mural-placeholder.svg"
 const photoProps = getPhotoImgProps(id, mural.photos[0], PHOTO_SIZES);
+
+let alt = "";
+if (mural.photos[0]) {
+  alt = mural.photos[0].caption ?? mural.title ?? "Untitled";
+} else {
+  alt = "No photo available";
+}
 ---
 
 <Base title={mural.title ?? "Mural Marker"}>
@@ -113,11 +119,11 @@ const photoProps = getPhotoImgProps(id, mural.photos[0], PHOTO_SIZES);
         </dl>
         <div class="lg:w-1/2">
           <img
-            {...photoProps}
             class="md:w-4/5 lg:w-4/5 ml-auto mr-auto bg-neutral-200 bg-[url('/photo-loading.svg')] bg-center bg-no-repeat bg-[length:96px]"
-            alt={mural.photos[0].caption ?? `Mural by ${mural.title}`}
+            alt={alt}
             loading={"eager"}
             decoding="async"
+            {...photoProps}
           />
         </div>
       </div>

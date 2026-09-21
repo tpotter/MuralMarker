@@ -1,5 +1,5 @@
 import type { Mural } from "../content.config";
-import { PHOTO_BASE_URL } from "./constants";
+import { PHOTO_BASE_URL, PHOTO_PLACEHOLDER } from "./constants";
 
 export type Photo = Mural["photos"][number];
 
@@ -27,14 +27,23 @@ export const getPhotoSrcSet = (entryId: string, photo: Photo) => {
 
 export const getPhotoImgProps = (
   entryId: string,
-  photo: Photo,
+  photo: Photo | undefined,
   sizes: string,
 ) => {
-  const srcSet = getPhotoSrcSet(entryId, photo);
+  if (!photo) {
+    return {
+      src: PHOTO_PLACEHOLDER.src,
+      srcSet: "",
+      sizes,
+      width: PHOTO_PLACEHOLDER.width,
+      height: PHOTO_PLACEHOLDER.height,
+    };
+  }
 
+  const srcSet = getPhotoSrcSet(entryId, photo);
   const srcArray = srcSet.split(",");
 
-  var src = "";
+  let src = "";
   if (srcArray.length >= 3) {
     src = getPhotoUrl(photo.file, 1200);
   } else if (srcArray.length === 2) {

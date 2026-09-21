@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { getPhotoImgProps } from "../lib/photos";
 import type { MuralEntry } from "../lib/types";
 
@@ -8,23 +9,17 @@ interface MuralPopupProps {
 const POPUP_PHOTO_SIZES = "260px";
 
 export const MuralPopup = ({ mural }: MuralPopupProps) => {
-  /*
-    mural.title
-    mural.description
-    mural.dateStart
-    mural.dateEnd
-    mural.location
-    mural.artists
-    mural.removalDateUncertain
-    */
-
   const photoProps = getPhotoImgProps(
     mural.id,
     mural.photos[0],
     POPUP_PHOTO_SIZES,
   );
-  const alt =
-    mural.photos.length > 0 ? mural.photos[0].caption : "No image available";
+  const alt = useMemo(() => {
+    if (mural.photos.length === 0) {
+      return "No image available";
+    }
+    return mural.photos[0].caption ?? mural.title ?? "Untitled";
+  }, []);
 
   return (
     <div className="flex flex-col">

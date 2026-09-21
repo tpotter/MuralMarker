@@ -185,3 +185,49 @@ describe("getPhotoImgProps", () => {
     }
   });
 });
+
+describe("getPhotoImgProps with no photo", () => {
+  // The schema allows an entry with an empty `photos` array, so both call
+  // sites can hand this helper `photos[0]` === undefined. Today that throws;
+  // it should fall back to the local placeholder instead.
+  // Worth lifting to a shared constant (alongside PHOTO_BASE_URL) rather than
+  // living as a literal here and in the components.
+  const PLACEHOLDER = "/mural-placeholder.svg";
+
+  it("does not throw when the entry has no photos", () => {
+    expect(() => getPhotoImgProps("entry", undefined, "260px")).not.toThrow();
+  });
+
+  it("falls back to the local placeholder image", () => {
+    expect(getPhotoImgProps("entry", undefined, "260px").src).toBe(PLACEHOLDER);
+  });
+
+  it("never points at the photo bucket when there is no photo", () => {
+    // Guards the current failure mode, which builds ".../undefined-1200.webp".
+    const props = getPhotoImgProps("entry", undefined, "260px");
+
+    expect(props.src).not.toContain(PHOTO_BASE_URL);
+    expect(props.src).not.toContain("undefined");
+  });
+
+  it("offers no srcset, since the placeholder has no size variants", () => {
+    const props = getPhotoImgProps("entry", undefined, "260px");
+
+    // Either omitted or empty — an empty srcset is ignored by the browser,
+    // which falls back to src.
+    expect(props.srcSet ?? "").toBe("");
+  });
+
+  it("still reserves the box, at the placeholder's own 4:3 ratio", () => {
+    // public/mural-placeholder.svg is 400x300.
+    const props = getPhotoImgProps("entry", undefined, "260px");
+
+    expect(props.width).toBeGreaterThan(0);
+    expect(props.height).toBeGreaterThan(0);
+    expect(props.width / props.height).toBeCloseTo(4 / 3, 2);
+  });
+
+  it("passes sizes through unchanged", () => {
+    expect(getPhotoImgProps("entry", undefined, "260px").sizes).toBe("260px");
+  });
+});

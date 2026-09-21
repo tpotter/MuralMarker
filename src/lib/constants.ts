@@ -6,3 +6,9 @@ export const MAP_BOUNDS = [
 ] as LatLngBoundsLiteral;
 
 export const PHOTO_BASE_URL = "https://images.muralmarker.com/";
+
+export const PHOTO_PLACEHOLDER = {
+  src: "/mural-placeholder.svg",
+  width: 400,
+  height: 300,
+};
