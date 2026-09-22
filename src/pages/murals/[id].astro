@@ -4,8 +4,10 @@ import Base from "../../layouts/Base.astro";
 import type { InferGetStaticPropsType } from "astro";
 import PageLayout from "../../layouts/PageLayout.astro";
 import VisibilityPill from "../../components/VisibilityPill.astro";
+import { getPhotoImgProps } from "../../lib/photos";
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const PHOTO_SIZES = "(max-width: 1040px) calc(100vw - 2rem), 1000px";
 
 export async function getStaticPaths() {
   const murals = await getCollection("murals");
@@ -14,8 +16,17 @@ export async function getStaticPaths() {
     props: { mural: entry.data },
   }));
 }
-
 const { mural } = Astro.props;
+const { id } = Astro.params;
+
+const photoProps = getPhotoImgProps(id, mural.photos[0], PHOTO_SIZES);
+
+let alt = "";
+if (mural.photos[0]) {
+  alt = mural.photos[0].caption ?? mural.title ?? "Untitled";
+} else {
+  alt = "No photo available";
+}
 ---
 
 <Base title={mural.title ?? "Mural Marker"}>
@@ -108,9 +119,11 @@ const { mural } = Astro.props;
         </dl>
         <div class="lg:w-1/2">
           <img
-            class="md:w-4/5 lg:w-4/5 ml-auto mr-auto"
-            src="/mural-placeholder.svg"
-            alt={mural.title}
+            class="md:w-4/5 lg:w-4/5 ml-auto mr-auto bg-neutral-200 bg-[url('/photo-loading.svg')] bg-center bg-no-repeat bg-[length:96px]"
+            alt={alt}
+            loading={"eager"}
+            decoding="async"
+            {...photoProps}
           />
         </div>
       </div>

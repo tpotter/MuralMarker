@@ -1,0 +1,38 @@
+{
+  "title": "",
+  "artists": [
+    {
+      "name": "",
+      "url": ""
+    }
+  ],
+  "description": "",
+  "location": {
+    "lat": 0,
+    "lng": 0,
+    "address": "",
+    "neighborhood": ""
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 1900,
+    "month": 1,
+    "precision": "exact"
+  },
+  "lastUpdated": "",
+  "photos": [
+    {
+      "file": "georgetown-canal-mosaic-01",
+      "width": 1600,
+      "height": 1200,
+      "caption": "Mosaic panel, midday light",
+      "dateTaken": "2025-05-10"
+    }
+  ],
+  "sources": [
+    {
+      "label": "",
+      "url": ""
+    }
+  ]
+}

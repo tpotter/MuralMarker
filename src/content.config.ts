@@ -22,7 +22,13 @@ const Artist = z
 
 const Photo = z
   .object({
-    key: z.string().min(1), // opaque (§5.1)
+    // base name only: the entry supplies the folder and photos.ts appends
+    // "-<width>.webp" per the variant ladder (plan §5.1, §5.3-§5.4)
+    file: z
+      .string()
+      .regex(/^[a-z0-9][a-z0-9_-]*$/, "lowercase, no extension, no slashes"),
+    // the original's dimensions — they cap the srcset ladder (never upscale)
+    // and populate width/height on <img> to prevent layout shift (plan §5.2)
     width: z.int().positive(),
     height: z.int().positive(),
     caption: z.string().optional(),
