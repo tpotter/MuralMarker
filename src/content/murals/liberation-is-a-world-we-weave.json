@@ -6,12 +6,12 @@
       "url": "https://www.shanishih.com/"
     }
   ],
-  "description": "Mural",
+  "description": "Mural painted on the Festival Center in Adams Morgan, the work commemorates the organizers and movements of the neighborhood.  Supported by the DC Commission on Arts & Humanities Public Art Building Communities Program.",
   "location": {
     "lat": 38.92509,
     "lng": -77.037998,
     "address": "1640 Columbia Rd. NW",
-    "neighborhood": ""
+    "neighborhood": "Adams Morgan"
   },
   "status": "existing",
   "dateStart": {
@@ -26,7 +26,8 @@
       "width": 6240,
       "height": 4160,
       "caption": "Community unveiling day",
-      "dateTaken": "2026-09-13"
+      "dateTaken": "2026-09-13",
+      "credit": "Tom Potter"
     }
   ]
 }
