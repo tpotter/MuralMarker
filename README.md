@@ -1,18 +1,5 @@
 # Mural Marker
 
-> **Under construction — all mural data is mock data.**
->
-> Every entry in `src/content/murals/` is fabricated for development and
-> testing. The artist names, titles, descriptions, dates, addresses, photo
-> credits, and sources are invented. They are deliberately realistic so that layout, filtering, and the timeline get exercised
-> against data shaped like the real thing. None of it documents an actual
-> mural, and no real artist or photographer is credited anywhere in this
-> repository.
->
-> Real records will replace this set before the archive is presented as one.
-> Until then, please don't cite, scrape, or reuse anything in
-> `src/content/murals/` as fact.
-
 ## Overview
 
 Washington D.C. is home to a thriving community of artists and much of

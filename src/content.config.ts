@@ -50,7 +50,7 @@ const Mural = z
   .object({
     title: z.string().min(1).optional(),
     artists: z.array(Artist).min(1),
-    description: z.string().min(1),
+    description: z.string().optional(),
     location: z
       .object({
         lat: z
