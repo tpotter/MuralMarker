@@ -10,5 +10,12 @@ const murals = entries.map((e) => ({ id: e.id, ...e.data }));
 
 <Base title="Mural Marker">
   <Title />
-  <Map client:only murals={murals} />
+  <Map client:only="react" murals={murals}>
+    <div slot="fallback" class="h-screen flex items-center justify-center">
+      <div
+        class="h-full w-full bg-[url('/photo-loading.svg')] bg-center bg-no-repeat bg-[length:96px]"
+      >
+      </div>
+    </div>
+  </Map>
 </Base>
