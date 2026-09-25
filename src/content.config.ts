@@ -13,10 +13,22 @@ const MuralDate = z
   })
   .strict();
 
+// non-artist credits (commissioners, funders, etc.) go in the description
+export const ArtistRole = z.enum([
+  "lead",
+  "designer",
+  "supporting",
+  "community",
+  "conservator",
+  "restorer",
+]);
+export type ArtistRole = z.infer<typeof ArtistRole>;
+
 const Artist = z
   .object({
     name: z.string().min(1),
     url: z.url().optional(), // absent for anonymous/unclaimed
+    role: ArtistRole.default("lead"),
   })
   .strict();
 

@@ -21,7 +21,7 @@ const makeMural = (
   overrides: Partial<MuralEntry> = {},
 ): MuralEntry => ({
   id: `mural-${idCounter++}`,
-  artists: [{ name: "Test Artist" }],
+  artists: [{ name: "Test Artist", role: "lead" }],
   description: "A test mural",
   location: { lat: 38.9, lng: -77.0 },
   status: "existing",
