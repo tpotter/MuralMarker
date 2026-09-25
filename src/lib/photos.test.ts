@@ -34,20 +34,20 @@ describe("PHOTO_BASE_URL", () => {
 
 describe("getPhotoUrl", () => {
   it("builds <base>/<entry id>/<file>-<width>.webp", () => {
-    expect(getPhotoUrl("front", 800)).toBe(
-      `${PHOTO_BASE_URL.replace(/\/$/, "")}/front-800.webp`,
+    expect(getPhotoUrl("entry", "front", 800)).toBe(
+      `${PHOTO_BASE_URL.replace(/\/$/, "")}/entry/front-800.webp`,
     );
   });
 
   it("returns an absolute URL, as og:image requires", () => {
-    const url = new URL(getPhotoUrl("front", 1200));
+    const url = new URL(getPhotoUrl("entry", "front", 1200));
 
     expect(url.protocol).toBe("https:");
-    expect(url.pathname).toBe("/front-1200.webp");
+    expect(url.pathname).toBe("/entry/front-1200.webp");
   });
 
   it("never emits a doubled slash, whatever the base URL ends with", () => {
-    const url = getPhotoUrl("front", 400);
+    const url = getPhotoUrl("entry", "front", 400);
 
     // Only the protocol's "//" is allowed.
     expect(url.slice("https://".length)).not.toContain("//");
@@ -55,7 +55,7 @@ describe("getPhotoUrl", () => {
 
   it("keeps each variant width distinct", () => {
     const widths = [400, 800, 1200, 1600, 2400] as const;
-    const urls = widths.map((w) => getPhotoUrl("front", w));
+    const urls = widths.map((w) => getPhotoUrl("entry", "front", w));
 
     expect(new Set(urls).size).toBe(widths.length);
   });
@@ -95,7 +95,7 @@ describe("getPhotoSrcSet", () => {
 
     expect(entries.length).toBeGreaterThan(1);
     for (const [width, url] of entries) {
-      expect(url).toBe(getPhotoUrl("front", width));
+      expect(url).toBe(getPhotoUrl("entry", "front", width));
     }
     const widths = entries.map(([w]) => w);
     expect([...widths].sort((a, b) => a - b)).toEqual(widths);
@@ -158,7 +158,7 @@ describe("getPhotoImgProps", () => {
     // middle rung — never the 2400px file.
     const props = getPhotoImgProps("entry", makePhoto(3000), "100vw");
 
-    expect(props.src).toBe(getPhotoUrl("front", 1200));
+    expect(props.src).toBe(getPhotoUrl("entry", "front", 1200));
   });
 
   it("caps the fallback at a variant that was actually generated", () => {
@@ -166,13 +166,13 @@ describe("getPhotoImgProps", () => {
     // the next rung down rather than 404.
     const props = getPhotoImgProps("entry", makePhoto(900), "260px");
 
-    expect(props.src).toBe(getPhotoUrl("front", 800));
+    expect(props.src).toBe(getPhotoUrl("entry", "front", 800));
   });
 
   it("still yields a usable src for a photo below the smallest rung", () => {
     const props = getPhotoImgProps("entry", makePhoto(320, 240), "260px");
 
-    expect(props.src).toBe(getPhotoUrl("front", 400));
+    expect(props.src).toBe(getPhotoUrl("entry", "front", 400));
   });
 
   it("offers the fallback as one of the srcset candidates", () => {
