@@ -3,7 +3,38 @@
   "artists": [
     {
       "name": "Shani Shih",
-      "url": "https://www.shanishih.com/"
+      "url": "https://www.shanishih.com/",
+      "role": "lead"
+    },
+    {
+      "name": "Ernesto Zelaya",
+      "url": "https://www.instagram.com/dcsofaimeous/",
+      "role": "supporting"
+    },
+    {
+      "name": "Amy Tian",
+      "url": "https://www.instagram.com/artbyamy.jpg/",
+      "role": "supporting"
+    },
+    {
+      "name": "Michelle Shiyu Chen",
+      "url": "https://www.instagram.com/shiyuart/",
+      "role": "supporting"
+    },
+    {
+      "name": "Ryan Allen",
+      "url": "https://www.instagram.com/miztarious/",
+      "role": "supporting"
+    },
+    {
+      "name": "Yingzhi Dai",
+      "url": "https://www.instagram.com/yuzu_87/",
+      "role": "supporting"
+    },
+    {
+      "name": "Ann Gill",
+      "url": "https://www.instagram.com/annlgill/",
+      "role": "supporting"
     }
   ],
   "description": "A mural near the Friendship Arch in Chinatown, the piece was intended as a response to the building of a luxury residence in the adjacent plot.  It was designed so that as construction proceeds, the mural will be progressivly covered until it is fully obscured.  As of the time of writing, the mural is no longer visible.  Created in partnership with Save Chinatown Solidarity Network DC.",
