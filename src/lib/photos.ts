@@ -5,20 +5,20 @@ export type Photo = Mural["photos"][number];
 
 const WIDTH_POINTS = [400, 800, 1200, 1600, 2400];
 
-export const getPhotoUrl = (file: string, width: number) => {
-  return `${PHOTO_BASE_URL}${file}-${width}.webp`;
+export const getPhotoUrl = (entryId: string, file: string, width: number) => {
+  return `${PHOTO_BASE_URL}${entryId}/${file}-${width}.webp`;
 };
 
 export const getPhotoSrcSet = (entryId: string, photo: Photo) => {
   const validWidths = WIDTH_POINTS.filter((width) => photo.width >= width);
 
   if (validWidths.length === 0) {
-    return `${getPhotoUrl(photo.file, WIDTH_POINTS[0])} ${WIDTH_POINTS[0]}w`;
+    return `${getPhotoUrl(entryId, photo.file, WIDTH_POINTS[0])} ${WIDTH_POINTS[0]}w`;
   }
 
   const srcSetPaths = validWidths
     .map((width) => {
-      return `${getPhotoUrl(photo.file, width)} ${width}w`;
+      return `${getPhotoUrl(entryId, photo.file, width)} ${width}w`;
     })
     .join();
 
@@ -45,12 +45,14 @@ export const getPhotoImgProps = (
 
   let src = "";
   if (srcArray.length >= 3) {
-    src = getPhotoUrl(photo.file, 1200);
+    src = getPhotoUrl(entryId, photo.file, 1200);
   } else if (srcArray.length === 2) {
-    src = getPhotoUrl(photo.file, 800);
+    src = getPhotoUrl(entryId, photo.file, 800);
   } else {
-    src = src = getPhotoUrl(photo.file, 400);
+    src = src = getPhotoUrl(entryId, photo.file, 400);
   }
+
+  console.log(src);
 
   return {
     src,
