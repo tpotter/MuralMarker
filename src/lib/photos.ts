@@ -52,8 +52,6 @@ export const getPhotoImgProps = (
     src = src = getPhotoUrl(entryId, photo.file, 400);
   }
 
-  console.log(src);
-
   return {
     src,
     srcSet,
