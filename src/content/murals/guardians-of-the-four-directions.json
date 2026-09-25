@@ -1,0 +1,32 @@
+{
+  "title": "Guardians of the Four Directions",
+  "artists": [
+    {
+      "name": "Miss Chelove",
+      "url": "https://chelove.com/"
+    }
+  ],
+  "description": "A 6 story mural painted on the side of Hotel Zena memorializing the strength and resilience of women leaders.",
+  "location": {
+    "lat": 38.90521439088476,
+    "lng": -77.03160189532271,
+    "address": "1155 14th Street NW",
+    "neighborhood": ""
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2020,
+    "month": 3,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-09-23",
+  "photos": [
+    {
+      "file": "guardians-of-the-four-directions",
+      "width": 6240,
+      "height": 4160,
+      "credit": "Tom Potter",
+      "dateTaken": "09-24-2026"
+    }
+  ]
+}

@@ -20,20 +20,13 @@
     "month": 1,
     "precision": "exact"
   },
-  "lastUpdated": "",
-  "photos": [
-    {
-      "file": "georgetown-canal-mosaic-01",
-      "width": 1600,
-      "height": 1200,
-      "caption": "Mosaic panel, midday light",
-      "dateTaken": "2025-05-10"
-    }
-  ],
+  "lastUpdated": "1000-01-01",
+  "photos": [],
   "sources": [
     {
       "label": "",
       "url": ""
     }
-  ]
+  ],
+  "removalDateUncertain": false
 }

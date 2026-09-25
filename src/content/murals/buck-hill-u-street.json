@@ -1,0 +1,32 @@
+{
+  "title": "Buck Hill",
+  "artists": [
+    {
+      "name": "Joe Pagac",
+      "url": "https://joepagac.net/"
+    }
+  ],
+  "description": "Mural depicting Buck Hill, the 'Wailin Mailman', a famous jazz musician and mail carrier from the U Street area.  Sponsored by MuralsDC.",
+  "location": {
+    "lat": 38.91658879539664,
+    "lng": -77.03173550931257,
+    "address": "1925 14th St NW",
+    "neighborhood": "U Street Corridor"
+  },
+  "status": "existing",
+  "dateStart": {
+    "year": 2019,
+    "month": 8,
+    "precision": "exact"
+  },
+  "lastUpdated": "2026-09-22",
+  "photos": [
+    {
+      "file": "buck-hill",
+      "width": 6240,
+      "height": 4160,
+      "credit": "Tom Potter",
+      "dateTaken": "09-24-2026"
+    }
+  ]
+}
