@@ -1,0 +1,46 @@
+---
+import type { ArtistRole } from "../content.config";
+
+interface Props {
+  role: ArtistRole;
+}
+
+const { role } = Astro.props;
+
+let roleStyle = "";
+let roleName = "";
+
+switch (role) {
+  case "lead":
+    roleStyle = "bg-[#dbeafe] border-[#60a5fa] text-[#1e40af]";
+    roleName = "Lead Artist";
+    break;
+  case "designer":
+    roleStyle = "bg-[#dcfce7] border-[#4ade80] text-[#166534]";
+    roleName = "Designer";
+    break;
+  case "supporting":
+    roleStyle = "bg-[#fef3c7] border-[#fbbf24] text-[#92400e]";
+    roleName = "Supporting Artist";
+    break;
+  case "community":
+    roleStyle = "bg-[#ffe4e6] border-[#fb7185] text-[#9f1239]";
+    roleName = "Community Artist";
+    break;
+  case "conservator":
+    roleStyle = "bg-[#f3e8ff] border-[#c084fc] text-[#6b21a8]";
+    roleName = "Conservator";
+    break;
+  case "restorer":
+    roleStyle = "bg-[#ccfbf1] border-[#2dd4bf] text-[#115e59]";
+    roleName = "Restorer";
+    break;
+  default: {
+    const unhandled: never = role;
+    throw new Error(`Unknown artist role: ${unhandled}`);
+  }
+}
+const pillStyle = `text-sm pl-2 pr-2 pt-1 pb-1 rounded-2xl border-2 ${roleStyle}`;
+---
+
+<div class={pillStyle}>{roleName}</div>

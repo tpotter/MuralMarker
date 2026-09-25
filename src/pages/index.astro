@@ -4,7 +4,7 @@ import Title from "../components/Title.astro";
 import { Map } from "../components/Map";
 import { getCollection } from "astro:content";
 
-const entries = await getCollection("murals"); // Array<{ id, data }>
+const entries = await getCollection("murals");
 const murals = entries.map((e) => ({ id: e.id, ...e.data }));
 ---
 
