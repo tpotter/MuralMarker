@@ -12,17 +12,38 @@ export const getPhotoUrl = (entryId: string, file: string, width: number) => {
 export const getPhotoSrcSet = (entryId: string, photo: Photo) => {
   const validWidths = WIDTH_POINTS.filter((width) => photo.width >= width);
 
+  const sizeRatio = photo.height / photo.width;
+
   if (validWidths.length === 0) {
-    return `${getPhotoUrl(entryId, photo.file, WIDTH_POINTS[0])} ${WIDTH_POINTS[0]}w`;
+    return {
+      defaultSrcSet: `${getPhotoUrl(entryId, photo.file, WIDTH_POINTS[0])} ${WIDTH_POINTS[0]}w`,
+      srcSet: [
+        {
+          src: getPhotoUrl(entryId, photo.file, WIDTH_POINTS[0]),
+          width: WIDTH_POINTS[0],
+          height: Math.round(WIDTH_POINTS[0] * sizeRatio),
+        },
+      ],
+    };
   }
 
-  const srcSetPaths = validWidths
+  const defaultSrcSetPaths = validWidths
     .map((width) => {
       return `${getPhotoUrl(entryId, photo.file, width)} ${width}w`;
     })
     .join();
+  const srcSetSources = validWidths.map((width) => {
+    return {
+      src: getPhotoUrl(entryId, photo.file, width),
+      width: width,
+      height: Math.round(width * sizeRatio),
+    };
+  });
 
-  return srcSetPaths;
+  return {
+    defaultSrcSet: defaultSrcSetPaths,
+    srcSet: srcSetSources,
+  };
 };
 
 export const getPhotoImgProps = (
@@ -33,15 +54,16 @@ export const getPhotoImgProps = (
   if (!photo) {
     return {
       src: PHOTO_PLACEHOLDER.src,
-      srcSet: "",
+      defaultSrcSet: "",
+      srcSet: [],
       sizes,
       width: PHOTO_PLACEHOLDER.width,
       height: PHOTO_PLACEHOLDER.height,
     };
   }
 
-  const srcSet = getPhotoSrcSet(entryId, photo);
-  const srcArray = srcSet.split(",");
+  const srcSets = getPhotoSrcSet(entryId, photo);
+  const srcArray = srcSets.defaultSrcSet.split(",");
 
   let src = "";
   if (srcArray.length >= 3) {
@@ -49,12 +71,13 @@ export const getPhotoImgProps = (
   } else if (srcArray.length === 2) {
     src = getPhotoUrl(entryId, photo.file, 800);
   } else {
-    src = src = getPhotoUrl(entryId, photo.file, 400);
+    src = getPhotoUrl(entryId, photo.file, 400);
   }
 
   return {
     src,
-    srcSet,
+    defaultSrcSet: srcSets.defaultSrcSet,
+    srcSet: srcSets.srcSet,
     sizes,
     width: photo.width,
     height: photo.height,
