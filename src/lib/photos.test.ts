@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import type { ImageSource } from "yet-another-react-lightbox";
 import { PHOTO_BASE_URL } from "./constants";
 import {
   getPhotoImgProps,
@@ -63,7 +64,7 @@ describe("getPhotoUrl", () => {
 
 describe("getPhotoSrcSet", () => {
   it("offers the full ladder for a photo larger than every rung", () => {
-    const srcSet = getPhotoSrcSet("entry", makePhoto(3000));
+    const { defaultSrcSet: srcSet } = getPhotoSrcSet("entry", makePhoto(3000));
 
     expect(widthsOf(srcSet)).toEqual([400, 800, 1200, 1600, 2400]);
   });
@@ -71,13 +72,13 @@ describe("getPhotoSrcSet", () => {
   it("stops at the photo's own width — a 900px photo has no 1200px variant", () => {
     // The ladder is truncated at prep time (plan §5.3), so offering a wider
     // rung here would point srcset at a file that was never uploaded.
-    const srcSet = getPhotoSrcSet("entry", makePhoto(900));
+    const { defaultSrcSet: srcSet } = getPhotoSrcSet("entry", makePhoto(900));
 
     expect(widthsOf(srcSet)).toEqual([400, 800]);
   });
 
   it("includes a rung exactly matching the photo's width", () => {
-    const srcSet = getPhotoSrcSet("entry", makePhoto(1200));
+    const { defaultSrcSet: srcSet } = getPhotoSrcSet("entry", makePhoto(1200));
 
     expect(widthsOf(srcSet)).toEqual([400, 800, 1200]);
   });
@@ -85,13 +86,18 @@ describe("getPhotoSrcSet", () => {
   it("still offers the smallest rung for a photo below it", () => {
     // prepare-photos.mjs generates the 400px variant even for a tiny source,
     // so the entry is never left with an empty srcset.
-    const srcSet = getPhotoSrcSet("entry", makePhoto(320, 240));
+    const { defaultSrcSet: srcSet } = getPhotoSrcSet(
+      "entry",
+      makePhoto(320, 240),
+    );
 
     expect(widthsOf(srcSet)).toEqual([400]);
   });
 
   it("pairs each URL with a matching width descriptor, in ascending order", () => {
-    const entries = parseSrcSet(getPhotoSrcSet("entry", makePhoto(1600)));
+    const entries = parseSrcSet(
+      getPhotoSrcSet("entry", makePhoto(1600)).defaultSrcSet,
+    );
 
     expect(entries.length).toBeGreaterThan(1);
     for (const [width, url] of entries) {
@@ -102,7 +108,7 @@ describe("getPhotoSrcSet", () => {
   });
 
   it("uses the photo's own file name", () => {
-    const srcSet = getPhotoSrcSet("entry", {
+    const { defaultSrcSet: srcSet } = getPhotoSrcSet("entry", {
       ...makePhoto(800),
       file: "back_wall-2",
     });
@@ -124,6 +130,7 @@ describe("getPhotoImgProps", () => {
     // loading/decoding/fetchpriority are deliberately absent — they vary per
     // call site (eager + high for the first detail photo, lazy elsewhere).
     expect(Object.keys(props).sort()).toEqual([
+      "defaultSrcSet",
       "height",
       "sizes",
       "src",
@@ -134,10 +141,11 @@ describe("getPhotoImgProps", () => {
 
   it("reuses getPhotoSrcSet verbatim", () => {
     const photo = makePhoto(1600);
+    const props = getPhotoImgProps("entry", photo, "260px");
+    const { defaultSrcSet, srcSet } = getPhotoSrcSet("entry", photo);
 
-    expect(getPhotoImgProps("entry", photo, "260px").srcSet).toBe(
-      getPhotoSrcSet("entry", photo),
-    );
+    expect(props.defaultSrcSet).toBe(defaultSrcSet);
+    expect(props.srcSet).toEqual(srcSet);
   });
 
   it("passes sizes through untouched", () => {
@@ -179,9 +187,67 @@ describe("getPhotoImgProps", () => {
     for (const width of [3000, 900, 320]) {
       const photo = makePhoto(width);
       const props = getPhotoImgProps("entry", photo, "260px");
-      const candidates = parseSrcSet(props.srcSet).map(([, url]) => url);
+      const candidates = parseSrcSet(props.defaultSrcSet).map(([, url]) => url);
 
       expect(candidates).toContain(props.src);
+    }
+  });
+});
+
+describe("getPhotoImgProps srcSet", () => {
+  // The lightbox (yet-another-react-lightbox) takes srcSet as ImageSource[]
+  // rather than a srcset string, so the helper exposes both: defaultSrcSet for
+  // <img>, srcSet for YARL slides. They must describe the same candidates.
+
+  it("offers one ImageSource per defaultSrcSet candidate, in the same order", () => {
+    for (const width of [3000, 1600, 900, 320]) {
+      const props = getPhotoImgProps("entry", makePhoto(width), "260px");
+      const candidates = parseSrcSet(props.defaultSrcSet);
+
+      expect(props.srcSet.map(({ width, src }) => [width, src])).toEqual(
+        candidates,
+      );
+    }
+  });
+
+  it("matches YARL's ImageSource shape exactly", () => {
+    const props = getPhotoImgProps("entry", makePhoto(1600), "260px");
+
+    expect(props.srcSet.length).toBeGreaterThan(0);
+    for (const source of props.srcSet) {
+      expect(Object.keys(source).sort()).toEqual(["height", "src", "width"]);
+      expect(typeof source.src).toBe("string");
+      expect(Number.isInteger(source.width)).toBe(true);
+      expect(Number.isInteger(source.height)).toBe(true);
+    }
+
+    // Compile-time check that the array is assignable to YARL's type.
+    const sources: ImageSource[] = props.srcSet;
+    expect(sources).toBe(props.srcSet);
+  });
+
+  it("scales each variant's height to the original's aspect ratio", () => {
+    // A 3024x4032 portrait original: the 800w variant is 800x1067.
+    const props = getPhotoImgProps("entry", makePhoto(3024, 4032), "100vw");
+
+    for (const { width, height } of props.srcSet) {
+      expect(height).toBe(Math.round((width * 4032) / 3024));
+    }
+  });
+
+  it("uses the generated variant widths, not the original's", () => {
+    const props = getPhotoImgProps("entry", makePhoto(3000), "100vw");
+
+    expect(props.srcSet.map(({ width }) => width)).toEqual([
+      400, 800, 1200, 1600, 2400,
+    ]);
+  });
+
+  it("includes the fallback src among its sources", () => {
+    for (const width of [3000, 900, 320]) {
+      const props = getPhotoImgProps("entry", makePhoto(width), "260px");
+
+      expect(props.srcSet.map(({ src }) => src)).toContain(props.src);
     }
   });
 });
@@ -215,7 +281,13 @@ describe("getPhotoImgProps with no photo", () => {
 
     // Either omitted or empty — an empty srcset is ignored by the browser,
     // which falls back to src.
-    expect(props.srcSet ?? "").toBe("");
+    expect(props.defaultSrcSet ?? "").toBe("");
+  });
+
+  it("offers an empty ImageSource array, so YARL falls back to src", () => {
+    const props = getPhotoImgProps("entry", undefined, "260px");
+
+    expect(props.srcSet).toEqual([]);
   });
 
   it("still reserves the box, at the placeholder's own 4:3 ratio", () => {

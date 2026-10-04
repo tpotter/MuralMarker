@@ -9,11 +9,13 @@ interface MuralPopupProps {
 const POPUP_PHOTO_SIZES = "260px";
 
 export const MuralPopup = ({ mural }: MuralPopupProps) => {
-  const photoProps = getPhotoImgProps(
-    mural.id,
-    mural.photos[0],
-    POPUP_PHOTO_SIZES,
-  );
+  const {
+    src,
+    defaultSrcSet: srcSet,
+    width,
+    height,
+    sizes,
+  } = getPhotoImgProps(mural.id, mural.photos[0], POPUP_PHOTO_SIZES);
   const alt = useMemo(() => {
     if (mural.photos.length === 0) {
       return "No image available";
@@ -58,7 +60,11 @@ export const MuralPopup = ({ mural }: MuralPopupProps) => {
         loading="eager"
         decoding="async"
         className="w-full h-auto bg-neutral-200 bg-[url('/photo-loading.svg')] bg-center bg-no-repeat bg-[length:48px]"
-        {...photoProps}
+        src={src}
+        srcSet={srcSet}
+        width={width}
+        height={height}
+        sizes={sizes}
       />
     </div>
   );
