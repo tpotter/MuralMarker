@@ -1,8 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import Lightbox, {
-  type ImageSource,
-  type SlideImage,
-} from "yet-another-react-lightbox";
+import Lightbox, { type SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { getPhotoImgProps, type Photo } from "../lib/photos";
 import { PHOTO_PLACEHOLDER } from "../lib/constants";
@@ -21,7 +18,7 @@ export const MuralImage = ({
   muralTitle,
 }: MuralImageProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  // TODO use setPhotIndex once multiple photos are supported
+  // TODO use setPhotoIndex once multiple photos are supported
   const [photoIndex, setPhotoIndex] = useState(0);
 
   const hasNoPhotos = !muralPhotos || muralPhotos.length === 0;

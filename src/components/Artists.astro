@@ -1,0 +1,57 @@
+---
+import type { Artist, ArtistRole } from "../content.config";
+import ArtistGroup from "./ArtistGroup.astro";
+
+interface Props {
+  artists: Artist[];
+}
+
+const { artists } = Astro.props;
+
+const groupedArtistRoles: Record<
+  ArtistRole,
+  { label: string; artists: Artist[] }
+> = {
+  lead: {
+    label: "Lead Artist",
+    artists: artists.filter((artist) => artist.role === "lead"),
+  },
+  designer: {
+    label: "Designer",
+    artists: artists.filter((artist) => artist.role === "designer"),
+  },
+  supporting: {
+    label: "Supporting Artist",
+    artists: artists.filter((artist) => artist.role === "supporting"),
+  },
+  community: {
+    label: "Community Artist",
+    artists: artists.filter((artist) => artist.role === "community"),
+  },
+  conservator: {
+    label: "Conservator",
+    artists: artists.filter((artist) => artist.role === "conservator"),
+  },
+  restorer: {
+    label: "Restorer",
+    artists: artists.filter((artist) => artist.role === "restorer"),
+  },
+};
+
+const groupKeys = Object.keys(groupedArtistRoles);
+---
+
+<div class="flex flex-col gap-1">
+  {
+    groupKeys.map((role) => {
+      const roleGroup =
+        groupedArtistRoles[role as keyof typeof groupedArtistRoles];
+
+      return (
+        roleGroup.artists.length > 0 && (
+          <ArtistGroup label={roleGroup.label} artists={roleGroup.artists} />
+        )
+      );
+    })
+  }
+</div>

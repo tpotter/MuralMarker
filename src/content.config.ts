@@ -31,6 +31,7 @@ const Artist = z
     role: ArtistRole.default("lead"),
   })
   .strict();
+export type Artist = z.infer<typeof Artist>;
 
 const Photo = z
   .object({

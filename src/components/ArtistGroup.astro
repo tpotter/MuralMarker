@@ -1,0 +1,38 @@
+---
+import type { Artist } from "../content.config";
+
+interface Props {
+  label: string;
+  artists: Artist[];
+}
+
+const { label, artists } = Astro.props;
+---
+
+<div class="flex flex-col pl-2">
+  <h3 class="text-sm text-slate-500 w-full border-b border-b-slate-300">
+    {`${label}${artists.length > 1 ? "s" : ""}`}
+  </h3>
+  <div class="pl-2">
+    {
+      artists.map((artist) => {
+        return (
+          <div class="flex gap-2 items-center">
+            <span>{artist.name}</span>
+            <span class="text-xs sm:text-sm">
+              &lt;
+              {artist.url ? (
+                <a class="break-all" href={artist.url}>
+                  {artist.url}
+                </a>
+              ) : (
+                "No artist page available"
+              )}
+              &gt;
+            </span>
+          </div>
+        );
+      })
+    }
+  </div>
+</div>
